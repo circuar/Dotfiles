@@ -1,0 +1,144 @@
+configuration {
+    modes: "window,drun,run,ssh";
+    font: "JetBrainsMonoNL NFM Bold 12";
+    location: 0;
+    show-icons: true;
+    icon-theme: "Tela-circle";
+    display-drun: " ";
+    display-run: " ";
+    display-filebrowser: " ";
+    display-window: " ";
+    drun-display-format: "{name}";
+    window-format: "{w}{t}";
+}
+
+@theme ""
+
+* {
+    separatorcolor: transparent;
+}
+
+window {
+    height: 380px;
+    width: 650px;
+    transparency: "real";
+    fullscreen: false;
+    enabled: true;
+    cursor: "default";
+    spacing: 0px;
+    padding: 10px;
+    border-color: #48e4ff;
+    border-radius: 20px;
+    border: 2px;
+    background-color: #ffffff1a;
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0px;
+    padding: 0px;
+    orientation: horizontal;
+    border-radius: 10px;
+    children: [ "inputbar", "listbox"];
+    background-color: #262e3599;
+}
+
+
+inputbar {
+    enabled: true;
+    width: 380px;
+    spacing: 0px;
+    padding: 0px;
+    children: [ "entry"];
+    background-color: transparent;
+    background-image: url("/home/circuar/.config/rofi/background.png", width);
+    border-radius: 10px 0px 0px 10px;
+}
+
+entry {
+    enabled: false;
+}
+
+
+listbox {
+    spacing: 0px;
+    padding: 0px;
+    children: [ "dummy", "listview", "dummy"];
+    background-color: transparent;
+    border-radius: 0px 10px 10px 0px;
+}
+
+listview {
+    enabled: true;
+    spacing: 3px;
+    padding: 0px 15px ;
+    columns: 1;
+    lines: 7;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    expand: false;
+    fixed-height: true;
+    fixed-columns: true;
+    cursor: "default";
+    background-color:            transparent;
+}
+
+dummy {
+    background-color: transparent;
+}
+
+
+
+element {
+    border-radius: 10px;
+    enabled: true;
+    spacing: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    background-color: transparent;
+}
+
+
+
+element-icon {
+    size: 20px;
+    cursor: inherit;
+    background-color: transparent;
+    text-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    cursor: inherit;
+    background-color: transparent;
+    text-color: #aab6b9;
+}
+element selected.normal {
+    background-color: #93c5cc;
+    text-color: rgb(252, 254, 255);
+    border-radius: 10px;
+}
+element-text selected.normal {
+    text-color:#00212b;
+}
+
+
+
+error-message {
+    text-color:                  #ffffff;
+    background-color:            #ffffff;
+    text-transform: capitalize;
+    children: [ "textbox"];
+}
+
+textbox {
+    text-color: inherit;
+    background-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}

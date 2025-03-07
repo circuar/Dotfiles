@@ -1,0 +1,127 @@
+{
+    // debug
+    "reload_style_on_change": true,
+    "name": "dock",
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 34,
+    "margin-top": 0,
+    "margin-right": 400,
+    "margin-bottom": 4,
+    "margin-left": 400,
+    "spacing": 0,
+    "modules-left": [
+        "custom/rofi",
+        "custom/windowpin",
+        "custom/windowfloat",
+        "custom/windowpseudo",
+        "custom/windowclose",
+        "custom/windowforceclose",
+        "custom/screenshot",
+        "custom/colorpicker"
+    ],
+    "modules-center": [
+        "custom/browser",
+        "custom/file",
+        "custom/music",
+        "custom/wechat",
+        "custom/terminal"
+    ],
+    "modules-right": [
+        "group/music"
+    ],
+    // =================================================================================================================
+    "custom/rofi": {
+        "format": "",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "custom/windowpin": {
+        "format": "D",
+        "on-click": "hyprctl dispatch setfloating && hyprctl dispatch pin",
+        "tooltip": false
+    },
+    "custom/windowfloat": {
+        "format": "F",
+        "on-click": "hyprctl dispatch togglefloating",
+        "tooltip": false
+    },
+    "custom/windowclose": {
+        "format": "Q",
+        "on-click": "hyprctl dispatch killactive",
+        "tooltip": false
+    },
+    "custom/windowpseudo": {
+        "format": "Z",
+        "on-click": "hyprctl dispatch pseudo",
+        "tooltip": false
+    },
+    "custom/windowforceclose": {
+        "format": "K",
+        "on-click": "hyprctl dispatch forcekillactive",
+        "tooltip": false
+    },
+    "custom/screenshot": {
+        "format": "󰄄",
+        "on-click": "hyprshot -m region",
+        "tooltip": false
+    },
+    "custom/colorpicker": {
+        "format": "",
+        "on-click": "hyprpicker -a -r",
+        "tooltip": false
+    },
+    // =================================================================================================================
+    "custom/browser": {
+        "format": "󰀹",
+        "on-click": "sh -c zen-browser &",
+        "tooltip": false
+    },
+    "custom/music": {
+        "format": "󰫔",
+        "on-click": "sh -c cider &",
+        "tooltip": false
+    },
+    "custom/file": {
+        "format": "󰉖",
+        "on-click": "sh -c nautilus &",
+        "tooltip": false
+    },
+    "custom/wechat": {
+        "format": "󰘑",
+        "on-click": "sh -c wechat &",
+        "tooltip": false
+    },
+    "custom/terminal": {
+        "format": "󰆍",
+        "on-click": "sh -c kitty &",
+        "tooltip": false
+    },
+    // =================================================================================================================
+    "group/music": {
+        "orientation": "inherit",
+        "tooltip": false,
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/musicicon",
+            "mpris"
+        ]
+    },
+    "custom/musicicon": {
+        "format": " ",
+        "tooltip": false
+    },
+    "mpris": {
+        "tooltip": false,
+        "interval": 1,
+        "format": "{title} {position}/{length}",
+        "format-paused": "{title} {position}/{length}",
+        "format-stopped": "{title} {position}/{length}",
+        "title-len": 10,
+        "ignored-players": []
+    }
+}
