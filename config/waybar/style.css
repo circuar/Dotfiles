@@ -28,11 +28,15 @@ window#waybar.dock {
 
 tooltip {
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: none;
-    margin: 5px 10px;
-    padding: 5px 10px;
-    background-color: rgba(0, 30, 46, 0.5);
+    background-color: #000000;
+}
+
+tooltip label {
+    margin: 0px;
+    color: #e4fffd;
+    padding: 10px;
 }
 
 #windowtitle {
@@ -370,7 +374,6 @@ tooltip {
     padding: 0px;
     min-width: 0px;
     min-height: 0px;
-    border: none;
     box-shadow: none;
 }
 
@@ -499,7 +502,7 @@ tooltip {
     background-color: #000000;
     margin: 3px 3px 3px 3px;
     border-radius: 5px;
-    padding: 0px 23px 0px 20px;
+    padding: 0px 18px 0px 15px;
 }
 
 #custom-rofi:hover {
@@ -587,7 +590,7 @@ tooltip {
     margin: 0px 10px;
     padding: 0px 10px 0px 5px;
     font-size: 22px;
-    color: #ffffff;
+    color: #cffff5;
     transition-duration: 200ms;
 }
 
@@ -604,446 +607,211 @@ tooltip {
 }
 
 
-#music {
-    min-width: 0px;
+#custom-musicicon {
     background-color: #000000;
     padding: 0px 8px 0px 10px;
-    margin: 3px 3px 3px 0px;
+    margin: 3px 0px;
     border-radius: 5px;
+    color: #cffff5;
+}
+
+#custom-musicicon:hover {
+    background-color: #cffff5;
+    color: #000;
 }
 
 #mpris {
-    min-width: 200px;
-    margin: 0px 0px 0px 8px;
-    background: radial-gradient(#0044aa, #000000);
-}
-
-/* #window {
-    margin: 0px;
-    padding: 0px 14px;
-    border-radius: 14px;
-}
-
-#custom-shutdown,
-#custom-reboot,
-#custom-sleep {
-    margin: 3px 3px 3px 2px;
-    padding: 0px 15px;
-    font-size: 11px;
-    border-radius: 16px;
-    background-color: rgb(0, 0, 0);
-}
-
-#custom-shutdown {
-    margin-left: 6px;
-}
-
-#wallpaper {
-    margin: 0px 0px 0px 15px;
-    border-radius: 12px 0px 0px 12px;
-    padding: 0px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#custom-wallpapericon {
-    padding: 0px 15px 0px 15px;
-    border-radius: 12px 0px 0px 12px;
-    background-color: transparent;
-}
-
-#custom-wallpaper1,
-#custom-wallpaper2,
-#custom-wallpaper3 {
-    margin: 3px 0px 3px 5px;
-    padding: 0px 15px;
-    font-size: 11px;
-    border-radius: 16px;
-    background-color: rgb(0, 0, 0);
-}
-
-#custom-wallpaper1 {
-    margin-left: 15px;
-}
-
-#custom-wallpaper3 {
-    margin-right: 15px;
-}
-
-#backlight {
-    margin: 0px;
-    padding: 0px 10px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#pulseaudio {
-    margin: 0px 15px 0px 0px;
-    padding: 0px 15px;
-    border-radius: 0px 12px 12px 0px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#pulseaudio-slider {
-    padding: 0px;
-    margin: 0px;
-}
-
-#pulseaudio-slider slider {
-    background-image: none;
-    background: none;
-    margin: 0px;
-    padding: 0px;
-    min-width: 0px;
-    min-height:0px;
-    border: none;
-    box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-    min-height: 10px;
-    min-width: 200px;
-    margin: 0px 15px 0px 0px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.253);
-}
-
-#pulseaudio-slider highlight {
-    min-width: 24px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.466);
-    transition: all;
-    transition-duration: 500ms;
-}
-
-#pulseaudio-slider highlight:hover {
-    background: linear-gradient(to left,#9bfcff, #00eeff, #006eff, #6200ff);
-    transition: all;
-    transition-duration: 500ms;
-
-}
-
-#mpris {
-    margin: 0px 15px 0px 0px;
-    padding: 0px 15px 0px 15px;
-    border-radius: 12px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-
-
-#workspaces {
-    margin: 0px 0px;
-    padding: 0px;
-    border-radius: 12px 0px 0px 12px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#workspaces label {
-    padding: 0px;
-    margin: 0px;
-    font-size: 0px;
-    border: none;
-}
-
-#workspaces button {
-    min-width: 0px;
-    min-height: 0px;
-    box-shadow: none;
-    text-shadow: none;
-    border: none;
-    margin: 7px 3px;
-    padding: 5px;
+    min-width: 140px;
+    margin: 3px 0px 3px 6px;
+    background: transparent;
     border-radius: 5px;
-    transition: none;
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
-    color: transparent;
-    background-color: #00ccff
 }
 
-
-
-#workspaces button.active {
-    min-width: 30px;
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
-    background: linear-gradient(to right, #006eff, #00d9ff, #00ffaa);
-
-}
-#workspaces button.active:hover {
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.0682);
-    background-color: #fdff94;
-
-}
-
-#workspaces button.empty {
-    background-color: #9de3ff;
-}
-#workspaces button.urgent {
-    background-color: #da9191;
-}
-
-#workspaces button:hover {
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.0682);
-    background: #50b0ff;
-}
-
-#workspaces button:first-child {
-    margin-left: 8px;
-}
-
-#workspaces button:last-child {
-    margin-right: 8px;
-}
-
-#centerdock {
-    margin: 0px;
-    border-radius: 0px 12px 12px 0px;
+#custom-wave1,
+#custom-wave2,
+#custom-wave3,
+#custom-wave4,
+#custom-wave5,
+#custom-wave6,
+#custom-wave7,
+#custom-wave8,
+#custom-wave9,
+#custom-wave10 {
+    background-color: #cffff5;
+    font-size: 1px;
     padding: 0px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#custom-taskbaricon {
-    font-size: 0px;
-    margin: 7px 8px 7px 0px;
-    padding: 5px 13px;
-    border-radius: 5px;
-    background-color: rgba(4, 7, 10, 0.541);
-    background-color: #55ff55;
-
-}
-#custom-taskbaricon:hover {
-    background-color: #00d9ff;
-}
-
-#taskbar {
-    padding: 0px;
-    margin: 0px;
-    border-radius: 12px;
-    background-color: #000000;
-
-}
-
-#taskbar button {
-    box-shadow: none;
-    background: none;
-    border: none;
-    padding: 5px;
-    min-width: 0px;
+    border-radius: 100px;
+    min-width: 4px;
+    margin: 15px 1px;
     min-height: 0px;
-    margin: -10px 0px;
+
 }
 
-#taskbar button:first-child {
-    margin-left: 10px;
+
+#custom-wave1 {
+    margin-left: 16px;
 }
 
-#taskbar button:last-child {
+#custom-wave10 {
     margin-right: 10px;
 }
 
-#taskbar label {
-    font-size: 20px;
-    font-family: "MesloLGSDZ Nerd Font Mono";
-    transition-duration: 300ms;
-    color: #c4e2fd;
+/* 定义不同跳动效果的动画 */
+@keyframes bar-sm {
+    0% {}
+
+    50% {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    50% {
+        margin-top: 11px;
+        margin-bottom: 11px;
+    }
+
+    25% {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    90% {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 
 }
 
-#taskbar button.active label {
-    color: #15ff00;
+@keyframes bar-md {
+    0% {}
+
+    30% {
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+    60% {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    75% {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    90% {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
 }
 
-#taskbar button:hover label {
-    color: #00ffff;
+@keyframes bar-lg {
+    0% {}
+
+    20% {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    40% {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    75% {
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
 }
 
-
-#layoutgroup {
-    background-color: rgba(4, 7, 10, 0.541);
-    border-radius: 24px;
-    margin: 0px 0px 0px 10px;
+#custom-wave2 {
+    animation: bar-sm 0.6s infinite alternate ease-in-out;
 }
 
-#custom-layout {
+#custom-wave9 {
+    animation: bar-sm 0.73s infinite alternate ease-in-out;
+}
+
+#custom-wave5 {
+    animation: bar-sm 0.57s infinite alternate ease-in-out;
+}
+
+#custom-wave3 {
+    animation: bar-md 0.87s infinite alternate ease-in-out;
+}
+
+#custom-wave7 {
+    animation: bar-md 1.27s infinite alternate ease-in-out;
+}
+
+#custom-wave4 {
+    animation: bar-lg 0.53s infinite alternate ease-in-out;
+}
+
+#custom-wave6 {
+    animation: bar-lg 0.67s infinite alternate ease-in-out;
+}
+
+#custom-wave8 {
+    animation: bar-md 0.97s infinite alternate ease-in-out;
+}
+
+#music {
     background-color: transparent;
-    min-width: 64px;
-    font-size: 0px;
-    padding: 0px;
-    border-radius: 24px;
-    margin: 7px;
+    margin: 0px 3px 0px 15px;
 }
 
-#custom-layout.master{
-    background: linear-gradient(to right, #00a2ff, #00ff55);
-
-}
-
-#custom-layout.dwindle {
-    min-width: 36px;
-    background: linear-gradient(to right, #00ff55, #0288f6);
-}
-
-
-
-#privacy {
-    padding: 0px;
-    margin: 0px 0px 0px 10px;
-    border-radius: 12px;
-    background-color: transparent;
-}
-
-#privacy-item image {
-    padding: 0px;
-    margin: 0px;
-    color: transparent;
-    font-size: 1px;
-}
-
-#privacy-item {
-    min-width: 10px;
-    min-height: 10px;
-    margin: 7px 0px;
-    padding: 0px;
+#custom-windowStatus {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0px 15px;
+    margin: 3px 3px;
     border-radius: 5px;
-}
-
-#privacy-item.audio-out {
-    background-color: #00ff26;
-}
-
-#privacy-item.audio-in {
-    background-color: #f9ff50;
-}
-
-#privacy-item.screenshot {
-    background-color: #ffb3b3;
-}
-
-#traygroup {
-    margin: 0px 15px 0px 15px;
-    background-color: transparent;
-
-}
-
-#custom-trayicon {
-    margin: 0px;
-    padding: 0px 15px;
-    border-radius: 12px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#tray {
-    margin: 0px 0px 0px 15px;
-    border-radius: 12px;
-    padding: 0px 15px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#network {
-    margin: 0px;
-    border-radius: 12px 0px 0px 12px;
-    padding: 0px 10px 0px 15px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#memory {
-    margin: 0px;
-    padding: 0px 10px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#cpu {
-    margin: 0px 15px 0px 0px;
-    padding: 0px 15px 0px 10px;
-    border-radius: 0px 12px 12px 0px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#clock {
-    margin: 0px;
-    padding: 0px 15px;
-    border-radius: 12px;
-    background-color: rgba(4, 7, 10, 0.541);
-}
-
-#tray window {
-    background-color: transparent;
-    box-shadow: none;
-    text-shadow: none;
-    border-radius: 10px;
-}
-
-#tray decoration {
-    box-shadow: none;
-    background-color: transparent;
-    border-radius: 10px;
-}
-
-#tray menu {
-    border-radius: 10px;
-    padding: 5px;
-}
-
-#tray menuitem {
-    padding: 3px 10px;
-    border-radius: 0px;
+    min-width: 150px;
     transition: all;
-    transition-duration: 0.3s;
-    border-radius: 5px;
+    transition-duration: 400ms;
 }
 
-#tray radio {
-    border-width: 2px;
+#custom-windowStatus.low {
+    background-color: #000000;
+    animation: ctn-running 3s infinite alternate ease-in-out;
+    animation-delay: 500ms;
+    transition: all;
+    transition-duration: 400ms;
 }
 
-#window:hover,
-#custom-wallpapericon:hover,
-#custom-wallpaper1:hover,
-#custom-wallpaper2:hover,
-#custom-wallpaper3:hover,
-#backlight:hover,
-#pulseaudio:hover,
-#mpris:hover,
-#custom-trayicon:hover,
-#network:hover,
-#memory:hover,
-#cpu:hover,
-#clock:hover {
-
-    color: #00c8ff;
+#custom-windowStatus.mid {
+    background-color: #000000;
+    animation: ctn-running 2s infinite alternate ease-in-out;
+    animation-delay: 500ms;
+    transition: all;
+    transition-duration: 400ms;
 }
 
-#window:hover label {
-    color: #00c8ff;
+#custom-windowStatus.high {
+    background-color: #000000;
+    animation: ctn-running 1s infinite alternate ease-in-out;
+    animation-delay: 500ms;
+    transition: all;
+    transition-duration: 400ms;
 }
 
-#custom-shutdown:hover {
-    background-color: rgba(255, 64, 64, 0.4);
-    color: #430000;
-}
+@keyframes ctn-running {
+    0% {
+        background: radial-gradient(#000000, #000000);
+    }
 
-#custom-reboot:hover {
-    background-color: rgba(47, 255, 0, 0.4);
-    color: #004306;
-}
+    25% {
+        background: radial-gradient(#000770, rgb(0, 0, 0));
+    }
+    50% {
+        background: radial-gradient(#000fe6, rgb(0, 0, 0));
+    }
+    75% {
+        background: radial-gradient(#000770, rgb(0, 0, 0));
+    }
 
-#custom-sleep:hover {
-    background-color: rgba(0, 213, 255, 0.4);
-    color: #001d43;
+    100% {
+        background: radial-gradient(#000000,#000000);
+    }
 }
-
-#tray menu {
-    background-color: rgba(50, 65, 85, 0.7);
-}
-
-#tray menuitem {
-    background-color: transparent;
-}
-
-#tray menuitem:hover {
-    background-color: rgba(118, 212, 255, 0.6);
-}
-
-#tray label,
-#tray image,
-#tray radio {
-    color: #c4e2fd;
-} */

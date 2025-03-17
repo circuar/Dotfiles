@@ -95,7 +95,8 @@
         "exec": "/home/circuar/.config/waybar/windowinfo.sh",
         "interval": 1,
         "return-type": "json",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "sh -c 'hyprctl getoption general:layout | grep -q dwindle && hyprctl keyword general:layout master || hyprctl keyword general:layout dwindle'"
     },
     // privacy.
     "privacy": {
@@ -321,6 +322,6 @@
     "cpu": {
         "interval": 1,
         "format": "󰄻 {usage:3}%",
-        "tooltip": false
+        "tooltip": true
     }
 }

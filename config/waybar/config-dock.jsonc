@@ -6,9 +6,9 @@
     "position": "bottom",
     "height": 34,
     "margin-top": 0,
-    "margin-right": 400,
+    "margin-right": 300,
     "margin-bottom": 4,
-    "margin-left": 400,
+    "margin-left": 300,
     "spacing": 0,
     "modules-left": [
         "custom/rofi",
@@ -28,7 +28,8 @@
         "custom/terminal"
     ],
     "modules-right": [
-        "group/music"
+        "group/music",
+        "custom/windowStatus"
     ],
     // =================================================================================================================
     "custom/rofi": {
@@ -36,6 +37,13 @@
         "on-click": "rofi -show drun",
         "tooltip": false
     },
+    // "custom/pacman": {
+    //     "format": "{text}",
+    //     "exec": "/home/circuar/.config/waybar/pacman.sh",
+    //     "interval": 3600,
+    //     "return-type": "json",
+    //     "tooltip": false
+    // },
     "custom/windowpin": {
         "format": "D",
         "on-click": "hyprctl dispatch setfloating && hyprctl dispatch pin",
@@ -100,15 +108,24 @@
     // =================================================================================================================
     "group/music": {
         "orientation": "inherit",
-        "tooltip": false,
         "drawer": {
             "transition-duration": 500,
-            "transition-left-to-right": true,
-            "click-to-reveal": true
+            "click-to-reveal": true,
+            "transition-left-to-right": true
         },
         "modules": [
             "custom/musicicon",
-            "mpris"
+            "mpris",
+            "custom/wave1",
+            "custom/wave2",
+            "custom/wave3",
+            "custom/wave4",
+            "custom/wave5",
+            "custom/wave6",
+            "custom/wave7",
+            "custom/wave8",
+            "custom/wave9",
+            "custom/wave10"
         ]
     },
     "custom/musicicon": {
@@ -118,10 +135,61 @@
     "mpris": {
         "tooltip": false,
         "interval": 1,
-        "format": "{title} {position}/{length}",
-        "format-paused": "{title} {position}/{length}",
-        "format-stopped": "{title} {position}/{length}",
+        "format": "{title} {position}",
+        "format-paused": "{title} {position}",
+        "format-stopped": "{title} {position}",
         "title-len": 10,
         "ignored-players": []
+    },
+    "custom/wave1": {
+        "format": " ",
+        "tooltip": false,
+        "interval": 1
+    },
+    "custom/wave2": {
+        "format": " ",
+        "tooltip": false,
+        "interval": 1
+    },
+    "custom/wave3": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave4": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave5": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave6": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave7": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave8": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave9": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/wave10": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "custom/windowStatus": {
+        "format": "{text}",
+        "exec": "/home/circuar/.config/waybar/usage.sh",
+        "return-type":"json",
+        "interval": 1,
+        "tool-tip": false
     }
+
 }
