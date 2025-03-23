@@ -11,9 +11,13 @@ get_window_info() {
     local pid
     pid=$(hyprctl activewindow -j | jq '.pid')
 
+    # 获取进程总数
+    local process_count
+    process_count=$(ps -e --no-headers | wc -l)
+
     # 如果 PID 不存在，返回空数据
     if [[ -z "$pid" || "$pid" -eq "null" ]]; then
-        echo '{ "class": "unknown", "text": " 0%  -   0" }'
+        echo "{ \"class\": \"unknown\", \"text\": \" 0%  -   $process_count\" }"
         return
     fi
 
@@ -31,9 +35,7 @@ get_window_info() {
         usage_class="high"
     fi
 
-    # 获取进程总数
-    local process_count
-    process_count=$(ps -e --no-headers | wc -l)
+
 
     # 输出 JSON 格式
     echo "{ \"class\": \"$usage_class\", \"text\": \" ${cpu_usage}%  -   $process_count\" }"
